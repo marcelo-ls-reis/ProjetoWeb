@@ -10,8 +10,22 @@ const postConsumer = {
             .string()
             .min(3)
             .max(50)
-            .required()
+            .required(),
+        address: Joi.object({
+            city: Joi
+                .string()
+                .required()
         }).required()
+    }).required(),
 };
+
+const getConsumer = {
+    params: Joi.object({
+        id: Joi
+        .number()
+        .integer()
+        .required()
+    })
+};    
 
 module.exports = {postConsumer};
